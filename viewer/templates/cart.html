@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <h2>Your Cart</h2>
+        {% for item in cart.items.all %}
+            <div>
+                {{ item.smartphone.name }} - {{ item.quantity }} - ${{ item.smartphone.price * item.quantity }}
+            </div>
+        {% endfor %}
+        <button class="btn btn-success">Proceed to Payment</button>
+    </div>
+{% endblock %}
