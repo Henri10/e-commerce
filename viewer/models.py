@@ -6,20 +6,21 @@ from django.db.models import DO_NOTHING
 
 
 class Products(models.Model):
-    title = models.CharField(max_length=100)
+    object = None
+    name = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.title
+        return self.name
 
 class Smartphone(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    title = models.ForeignKey(Products, on_delete=DO_NOTHING)
+    products = models.ForeignKey(Products, on_delete=DO_NOTHING)
+    name_product = models.CharField(max_length=40)
     price = models.IntegerField()
     description = models.TextField()
     stock = models.IntegerField()
     image_of_product = models.ImageField()
-    like = models.IntegerField(default=0)
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.name_product

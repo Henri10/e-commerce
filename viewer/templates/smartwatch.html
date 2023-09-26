@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %} Smartphone {% endblock %}
+{% block title %} Smartwatch {% endblock %}
 
 {% block content %}
     <div class="mx-lg-5">
         <div class="row">
-            {% for phone in phones %}
+            {% for watch in watches %}
                 <div class="card mx-3" style="width: 18rem;">
-                    <a href="{% url "detail-phone" phone.id %}">
-                        <img src="{{ phone.image_of_product.url }}" class="card-img-top"
+                    <a href="{% url "detail-phone" watch.id %}">
+                        <img src="{{ watch.image_of_product.url }}" class="card-img-top"
                              style="height: 200px">
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title"><b>{{ phone.name_product }}</b></h5>
-                        <h5 class="card-footer mt-lg-4 text-center"><b>{{ phone.price }}L</b></h5>
+                        <h5 class="card-title"><b>{{ watch.name_product }}</b></h5>
+                        <h5 class="card-footer mt-lg-4 text-center"><b>{{ watch.price }}L</b></h5>
                         <br>
                         <a class="card-link" href="#"><i class="bi bi-cart2"></i> Zgjidh nga opsionet</a>
                         <i class="bi bi-heart" style="color: red; margin-left: 30px"></i>
